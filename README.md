@@ -5,7 +5,12 @@
 I'm obsessed with learning about learning. More specifically: I'm constantly trying to figure out how to learn things _faster_ and _better_—and then actually _do something_ with that knowledge. Because what's the point of information if it just sits there?
 
 ### What I'm Building
-I work in L&D at Shopify, where I design bold, practical programs that help people learn at work. But I'm also building something more personal here: a space to practice what I preach. This GitHub is where I'm learning in public—experimenting with AI agents, coding as a non-dev, and forcing myself to slow down enough to actually grapple with ideas instead of just consuming them.
+I work in L&D, where I design bold, practical programs that help people learn at work—treating learning like a product. Recent projects include:
+- **Learning Village** - A gamified "AI-mazing Race" at Hack Days that took 35% of the company from “here’s how to prompt” to actually building with Cursor and agents through seven progressive challenges. 
+- **Quick Game Jam** - Three-week program where ~1000~ people coded and deployed games using AI tools. The goal: prove you can go from zero to deployed prototype in hours, not weeks when you use AI as your building partner(oh and built the learning website too - no LMS needed!)
+- **Onboarding as Product** -  Revamping how new engineers and data folks build their mental model of our tech stack and how systems connect. The goal: personalized, subdiscipline-specific paths where they ship real work from day one and use AI to accelerate understanding. 
+
+But I'm also building something more personal here: a space to practice what I preach. This GitHub is where I'm learning in public—experimenting with AI agents, coding as a non-dev, and forcing myself to slow down enough to actually grapple with ideas instead of just consuming them.
 
 ### Current Experiments
 - 🤖 **Learning to use Claude Code effectively:**
