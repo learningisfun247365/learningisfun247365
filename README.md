@@ -15,7 +15,7 @@ But I'm also building something more personal here: a space to practice what I p
 ### Current Experiments
 - 🤖 **Learning to use Claude Code effectively:**
   - As a non-dev: Using Cursor and VSCode to create a command center to access all my files and build with AI
-  - As a pseudo-dev: Building a personal data tracking app (currently a Google Sheet, but turning it into a real app) to monitor exercise, food, and daily patterns—helping me manage health anxiety and see the bigger picture of my habits
+  - As a pseudo-dev: Building an "Art in Context" timeline. My logic is I can learn how to better prompt, use APIs, and practice AI-driven development while simultaneously learning about art! I'm tracking my progress over in [Learning Claude Code →](learning-claude-code/)
 - ✍️ **Writing on [Substack](https://substack.com/@marialearns)** as a way to force myself to pause and think deeply about one thing instead of just consuming information
 - 🧠 Creating AI agents to be partners in work and life
 - 📚 Reading _The Story of Art_ by E.H. Gombrich
