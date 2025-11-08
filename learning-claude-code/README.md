@@ -1,48 +1,34 @@
-# Claude Code Mastery: A Learning Journey
+# Learning Claude Code
 
-**Building "Art in Context" while mastering Claude & Claude Code**
+*Building apps with AI - Learning in public*
 
 ---
 
 ## What is This?
 
-This folder documents my journey learning Claude Code from the ground up. Rather than just reading docs, I'm **learning by building** - creating an interactive art history timeline that places artists in their historical context.
+This is where I'm learning to build with Claude Code by actually building things. No curriculum, no tutorials - just real projects, real learning, and capturing what I discover along the way.
 
-**Why this project?** I'm reading "The Story of Art" by E.H. Gombrich (see main README) and want to understand how artists fit into broader cultural/political movements. Building this tool lets me explore that interest while learning AI-assisted development.
+**Learning approach:**
+- Build multiple projects simultaneously
+- Learn skills as projects need them (APIs when building theater-rss-feed, deployment when ready to ship, etc.)
+- Capture insights in learning-log for future reference and Substack content
 
 ---
 
-## The Learning Journey
-
-📍 **Start Here:** [ROADMAP.md](ROADMAP.md) - Complete step-by-step learning plan
-
-### **Structure:**
+## Structure
 
 ```
 learning-claude-code/
-├── ROADMAP.md              # The complete 10-step plan
+├── learning-log/              # Real-time capture of what I'm learning
+│   ├── 2025-11-07-workspace-organization.md
+│   ├── README.md              # Index of all sessions
+│   └── _template.md           # Template for new entries
 │
-├── foundations/            # Steps 1-3: Core concepts
-│   ├── step-01-prompt-engineering/
-│   ├── step-02-claude-code-basics/
-│   └── step-03-configuration/
+├── projects/                  # Apps I'm building
+│   ├── art-in-context/        # Interactive art history timeline
+│   └── theater-rss-feed/      # (Coming soon) NYC arts events aggregator
 │
-├── project-build/          # Steps 4-7: Building "Art in Context"
-│   ├── step-04-met-api/
-│   ├── step-05-data-enrichment/
-│   ├── step-06-visualization/
-│   └── step-07-deployment/
-│
-├── advanced/               # Steps 8-9: Skills & optimization
-│   ├── step-08-skills/
-│   └── step-09-optimization/
-│
-├── art-in-context-app/     # The final project
-│   ├── src/
-│   ├── data/
-│   └── docs/
-│
-└── resources/              # Supporting materials
+└── resources/                 # Reference materials
     ├── getting-started.md
     ├── useful-links.md
     ├── prompt-library/
@@ -51,83 +37,67 @@ learning-claude-code/
 
 ---
 
+## Current Projects
+
+### Art in Context
+Interactive timeline placing artists in historical/cultural context. Pulls data from MET Museum API, uses AI to generate historical context.
+
+**Status:** In progress
+**Learning focus:** APIs, data visualization, Claude prompting
+
+### Theater RSS Feed (Planned)
+Aggregates schedules from NYC playhouses, theaters, and art galleries into a unified feed.
+
+**Status:** Planned
+**Learning focus:** RSS/API integration, data aggregation, scheduling
+
+---
+
+## Learning Log
+
+The [learning-log/](learning-log/) folder contains session-based entries capturing what I learn as I build. Each entry includes:
+- What I learned
+- Key insights
+- Questions/confusion
+- What I built/did
+- Ideas for Substack posts
+
+**Latest entries:**
+- [Nov 7 - Workspace Organization & Claude Setup](learning-log/2025-11-07-workspace-organization-and-claude-setup.md)
+
+[View all entries →](learning-log/README.md)
+
+---
+
 ## Learning Philosophy
 
-1. **Step-based, not time-based** - Go at your own pace
-2. **Prompt engineering first** - Foundation before fancy features
-3. **Use before configure** - Experience the tool before customizing
-4. **Build something real** - Not just toy examples
-5. **Document everything** - Learning in public
-
----
-
-## Progress Tracking
-
-- [ ] **Step 1:** Prompt Engineering Basics
-- [ ] **Step 2:** Claude Code Workflow & Basics
-- [ ] **Step 3:** Configuration (Rules, Commands, Memory)
-- [ ] **Step 4:** MET Museum API Integration
-- [ ] **Step 5:** Data Enrichment with AI
-- [ ] **Step 6:** Timeline Visualization
-- [ ] **Step 7:** Deployment
-- [ ] **Step 8:** Building Skills
-- [ ] **Step 9:** Optimization
-- [ ] **Step 10:** Documentation & Sharing
-
----
-
-## Final Deliverable
-
-**"Art in Context"** - An interactive timeline that:
-- Pulls artist data from the MET Museum API
-- Uses Claude to generate historical context
-- Visualizes artists in their time periods
-- Shows cultural/political movements and influences
-- Is fully deployed and public
-
----
-
-## Resources
-
-- [Getting Started Guide](resources/getting-started.md) - Setup instructions
-- [Useful Links](resources/useful-links.md) - Curated resources
-- [Prompt Library](resources/prompt-library/) - Reusable templates (building as I go)
-- [Claude Code Configs](resources/claude-code-config/) - Example configurations (building as I go)
+- **Build real things** - No toy examples or tutorials
+- **Learn by doing** - Pick up skills when projects need them
+- **Capture insights** - Learning-log documents the journey
+- **Build in public** - Everything on GitHub from day one
+- **Mine for content** - Substack posts come from learning-log discoveries
 
 ---
 
 ## Following Along
 
-**For others wanting to learn:**
+**For others learning Claude Code:**
 
-Each step has:
-- `/exercises/` - Practice materials
-- `/completed/` - My actual work
-- `README.md` - Detailed instructions and learning objectives
-- `lessons-learned.md` - My reflections
+1. Browse [learning-log/](learning-log/) to see what I'm discovering
+2. Check out [projects/](projects/) to see actual code
+3. Use [resources/](resources/) for references and templates
 
-You can follow along step-by-step, or just browse my completed work and lessons learned.
+This isn't a tutorial - it's a learning journey. Take what's useful for your own path.
 
 ---
 
-## Substack Series
+## Substack
 
-I'll be writing about this journey on [Substack](https://substack.com/@marialearns):
-- Weekly reflections
-- Key lessons learned
-- Aha moments
-- Template deep-dives
-
-_(Links will be added as posts are published)_
+I write about this journey at [Substack](https://substack.com/@marialearns), pulling from learning-log entries:
+- Building in public insights
+- Non-dev perspective on AI tools
+- Learning design applied to self-directed learning
 
 ---
-
-## Questions?
-
-Open an issue or discussion on this repo!
-
----
-
-**Ready to start?** → [ROADMAP.md](ROADMAP.md)
 
 **Back to main profile:** [← learningisfun247365](../README.md)
