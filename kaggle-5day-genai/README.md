@@ -23,13 +23,21 @@ This 5-day program covers:
 ```
 kaggle-5day-genai/
 ├── README.md
-├── day-1/
-├── day-2/
-├── day-3/
-├── day-4/
-├── day-5/
+├── day-1-llms-and-text-generation.md
+├── day-2-embeddings-and-similarity.md
+├── day-3-generative-ai-agents.md
+├── day-4-domain-specific-llms.md
+├── day-5-mlops-for-genai.md
 └── resources/
 ```
+
+## Daily Notes
+
+- [Day 1: Foundational Large Language Models & Text Generation](day-1-llms-and-text-generation.md)
+- [Day 2: Embeddings and Similarity](day-2-embeddings-and-similarity.md)
+- [Day 3: Generative AI Agents](day-3-generative-ai-agents.md)
+- [Day 4: Domain-Specific LLMs](day-4-domain-specific-llms.md)
+- [Day 5: MLOps for Generative AI](day-5-mlops-for-genai.md)
 
 ## Progress Tracker
 - [ ] Day 1: Foundational Large Language Models & Text Generation
