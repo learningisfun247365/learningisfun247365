@@ -1,5 +1,6 @@
-# Day 1: Foundational Large Language Models & Text Generation
+# LLM Fundamentals - General Reference Notes
 
+> **Note:** These notes were compiled from the Kaggle 5-Day GenAI course (Day 1) and serve as general reference material for understanding LLMs, transformers, and related concepts.
 
 ## Topics Covered
 - What are LLMs

@@ -1,17 +1,17 @@
-# Kaggle 5-Day GenAI Sprint
+# Kaggle 5-Day Agents Sprint
 
 ## Overview
-Documentation and learning notes from the Kaggle 5-Day GenAI intensive sprint.
+Documentation and learning notes from the Kaggle 5-Day Agents intensive sprint.
 
-**Sprint Link:** https://www.kaggle.com/learn-guide/5-day-genai
+**Sprint Link:** https://www.kaggle.com/learn-guide/5-day-agents
 
 ## Sprint Structure
 This 5-day program covers:
-- Day 1: Foundational Large Language Models & Text Generation
-- Day 2: Embeddings and Similarity
-- Day 3: Generative AI Agents
-- Day 4: Domain-Specific LLMs
-- Day 5: MLOps for Generative AI
+- Day 1: Agents and Prompting Fundamentals
+- Day 2: Memory Management and Context
+- Day 3: Multi-Agent Systems
+- Day 4: Production Agents
+- Day 5: Advanced Agent Patterns
 
 ## Learning Goals
 - Understand fundamental GenAI concepts
@@ -23,28 +23,32 @@ This 5-day program covers:
 ```
 kaggle-5day-genai/
 ├── README.md
-├── day-1-llms-and-text-generation.md
-├── day-2-embeddings-and-similarity.md
-├── day-3-generative-ai-agents.md
-├── day-4-domain-specific-llms.md
-├── day-5-mlops-for-genai.md
+├── llm-fundamentals-notes.md          # General LLM reference notes
+├── day-1-agents-and-prompting-fundamentals.md
+├── day-2-memory-management-and-context.md
+├── day-3-multi-agent-systems.md
+├── day-4-production-agents.md
+├── day-5-advanced-agent-patterns.md
 └── resources/
 ```
 
+## Reference Materials
+- [LLM Fundamentals - General Reference](llm-fundamentals-notes.md) - Comprehensive notes on transformers, attention mechanisms, and LLM architecture
+
 ## Daily Notes
 
-- [Day 1: Foundational Large Language Models & Text Generation](day-1-llms-and-text-generation.md)
-- [Day 2: Embeddings and Similarity](day-2-embeddings-and-similarity.md)
-- [Day 3: Generative AI Agents](day-3-generative-ai-agents.md)
-- [Day 4: Domain-Specific LLMs](day-4-domain-specific-llms.md)
-- [Day 5: MLOps for Generative AI](day-5-mlops-for-genai.md)
+- [Day 1: Agents and Prompting Fundamentals](day-1-agents-and-prompting-fundamentals.md)
+- [Day 2: Memory Management and Context](day-2-memory-management-and-context.md)
+- [Day 3: Multi-Agent Systems](day-3-multi-agent-systems.md)
+- [Day 4: Production Agents](day-4-production-agents.md)
+- [Day 5: Advanced Agent Patterns](day-5-advanced-agent-patterns.md)
 
 ## Progress Tracker
-- [ ] Day 1: Foundational Large Language Models & Text Generation
-- [ ] Day 2: Embeddings and Similarity
-- [ ] Day 3: Generative AI Agents
-- [ ] Day 4: Domain-Specific LLMs
-- [ ] Day 5: MLOps for Generative AI
+- [ ] Day 1: Agents and Prompting Fundamentals
+- [ ] Day 2: Memory Management and Context
+- [ ] Day 3: Multi-Agent Systems
+- [ ] Day 4: Production Agents
+- [ ] Day 5: Advanced Agent Patterns
 
 ## Key Takeaways
 _To be updated as I progress through the sprint..._
