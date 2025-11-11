@@ -19,7 +19,9 @@ _Notes from Kaggle 5-Day Agents Sprint - Day 1_
    - Agent definition and properties
    - Running agents with tools (Google Search)
 
-2. **Day 1b: Multi-Agent Systems** (not yet started)
+2. **Day 1b: Multi-Agent Systems** 
+    - Distinguish between LLM agents and Workflow Agents
+    - Set up test multi agent teams
 
 ---
 
@@ -133,7 +135,7 @@ But, it is useful to try and wrap my brain around how agents actually work under
     - while it did save to a md file - it only shared the summary about the patterns ( what each agent pattern was doing) - not the _actual_ results. But it's the actual results I need.
     - Digging in - it's because `run_debug()` prints directly in the terminal - it isn't captured elsewhere.
     - To fix this - need to use `run()` to then capture the result. 
-    
+
 
 ---
 

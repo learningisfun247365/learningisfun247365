@@ -63,6 +63,48 @@ Event Finder → Filter Agent → Summarizer Agent → Formatter Agent → Outpu
 - Potentially custom date parsing function
 - Potentially custom filtering function (if needed as FunctionTool)
 
+### Tool Documentation Example:
+
+For the `search_atlanta_arts_events` tool used by research agents:
+
+```python
+google_search_tool = {
+    "name": "search_atlanta_arts_events",
+    "description": "Search for information about art events, exhibitions, and performances in Atlanta. Use this tool to find current and upcoming events at galleries, museums, and community venues.",
+    "parameters": {
+        "query": {
+            "type": "string",
+            "description": "The search query. Examples: 'Atlanta art exhibitions this week', 'High Museum current shows', 'Atlanta gallery openings November 2025'",
+            "required": True
+        },
+        "location": {
+            "type": "string",
+            "description": "Geographic focus. Default: 'Atlanta, GA'. Helps narrow results to metro area only.",
+            "default": "Atlanta, GA",
+            "required": False
+        },
+        "max_results": {
+            "type": "integer",
+            "description": "Maximum number of results to return. Default: 5. Keep this low (3-10) to avoid overwhelming output.",
+            "default": 5,
+            "required": False
+        }
+    },
+    "output": {
+        "type": "array",
+        "description": "List of events with: event name, venue, date/time, description, and URL if available"
+    },
+    "error_guidance": "If no results found, try: (1) Broader search terms like 'Atlanta art events', (2) Search by specific venue name, (3) Try 'free art events Atlanta' for community events"
+}
+```
+
+**Why this works:**
+- **Clear name** — `search_atlanta_arts_events` instead of generic `google_search`
+- **Specific examples** in parameter descriptions so the model knows what queries to use
+- **Default values** documented (location, max_results)
+- **Concise output** guidance to prevent swamping context
+- **Error recovery** suggestions to help the model retry intelligently
+
 ### Estimated Complexity:
 **Medium** - Combines two patterns, but uses existing ADK tools. Main challenge is crafting good agent instructions for consistent output format.
 
@@ -353,3 +395,4 @@ if __name__ == "__main__":
 
 _Use this space to capture insights as you build_
 
+Need to make sure that the tool is well documented

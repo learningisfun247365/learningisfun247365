@@ -14,6 +14,9 @@ python3 day1/day1a_simple_agent.py
 cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai
 source venv/bin/activate
 python3 day1/day1b_multi_agent.py
+
+
+**Day2b - Agent-tools:**
 ```
 
 ---

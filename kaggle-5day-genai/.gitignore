@@ -16,3 +16,4 @@ __pycache__/
 
 # ADK generated files
 sample-agent/
+.DS_Store

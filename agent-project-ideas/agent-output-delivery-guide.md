@@ -22,7 +22,7 @@ Is this a one-time research task?
 ├─ Yes → Save to Markdown File (Option 1)
 └─ No → Is this recurring (daily/weekly)?
     ├─ Yes → Do you want it delivered automatically?
-    │   ├─ Yes → Email (Option 2) or Notion (Option 4)
+    │   ├─ Yes → Email (Option 2) or Obsidian (Option 4)
     │   └─ No → HTML File (Option 3) or Markdown Archive
     └─ No → Is this interactive/iterative?
         ├─ Yes → Markdown Files + Manual Review
