@@ -45,7 +45,9 @@ python3 day1/day1b_multi_agent.py
 ```
 - **What:** Executes your AI agent script
 - **Why:** This actually runs your code
-- **What you'll see:** Agent responses printed in the terminal
+- **What you'll see:**
+  - Agent responses printed in the terminal
+  - **Day 1b also creates:** A timestamped markdown file in `day1/outputs/` with formatted pattern documentation
 
 ### 4. Exit Virtual Environment (When Done)
 ```bash
@@ -119,6 +121,7 @@ Each project gets its own "room" so they don't interfere with each other.
 |------|---------|-------|
 | `day1/day1a_simple_agent.py` | Day 1a: Simple agent (Roxie) | ✅ Yes - change questions here |
 | `day1/day1b_multi_agent.py` | Day 1b: Multi-agent patterns | ✅ Yes - modify patterns |
+| `day1/outputs/*.md` | Generated pattern documentation | 📖 Auto-generated reference |
 | `day1/notes.md` | Day 1 learning notes | ✅ Yes - add your insights |
 | `day1/*.ipynb` | Original Kaggle notebooks | 📖 Reference only |
 | `.env` | API key storage | ⚠️ Only if key changes |
@@ -137,6 +140,8 @@ kaggle-5day-genai/
 ├── day1/                  # Day 1 files
 │   ├── day1a_simple_agent.py
 │   ├── day1b_multi_agent.py
+│   ├── outputs/           # Generated markdown docs
+│   │   └── multi-agent-output_*.md
 │   ├── notes.md
 │   └── *.ipynb
 ├── day2/                  # Future: Day 2 files

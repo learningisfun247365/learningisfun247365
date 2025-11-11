@@ -23,7 +23,7 @@ _Notes from Kaggle 5-Day Agents Sprint - Day 1_
 
 ---
 
-## Activity 1: Setting Up Local Environment
+# Day 1a: From Prompt to Action
 
 ### Went a different direction - downloaded code instead. Process:
 - The Kaggle notebook was frankly annoying to work in, and i was running into errors. So I downloaded the code (.ipynb) instead to run locally in vscode.
@@ -54,10 +54,7 @@ ModuleNotFoundError: No module named 'dotenv'
 - **Success!** Script ran with Python 3.12 and answered all my test questions.
 
 ---
-
-## Activity 2: Building the Agent
-
-### What I built:
+### Building the Agent
 - Created an agent named "Roxie" that can search Google for current information
 - Tested it with three questions:
     1. "What is ADK from Google?" - Agent searched and found it's available in Python, Go, Java
@@ -90,12 +87,7 @@ python3 day1_local_agent.py
 - Virtual environments prevent package conflicts - each project gets isolated Python packages
 - Agents are different from LLMs: they reason, take actions with tools, and observe results
 - Tool usage is key: agents decide when to use tools based on instructions
-- Each time working on this project, need to spin up the virtual environment:
-```bash
-cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai
-source venv/bin/activate
-python3 day1_local_agent.py
-```
+- Each time working on this project, need to spin up the virtual environment. 
 - the browser web UI isn't necesssary for running the agent. It's helpful for debugging. 
 
 **The "Aha" Moments:**
@@ -115,15 +107,40 @@ They provide this abstraction layer that hides the nuts and bolts.
 
 But, it is useful to try and wrap my brain around how agents actually work under the hood - the fundamentals - and what these tools like Librechat are making easier to do.
 
+# Day 1b: Multi-Agent System
+
+### Why multi-agents?
+- When tasks get complex, trying to use a single agent (swiss army knife) to do it all ends up becomng unweildy and difficult to debug.   
+- Test multi agents:
+    - **Research Agent** - Searches for information using Google Search
+    - **Summarizer Agent** - Creates concise summaries from research findings.
+- There are different types of agent flows you can build:
+    1. **LLM orchestrator** = this is the root coordinator, an LLM agent that decides what agents to call and in what order. 
+        - pros: it is flexible, more adaptive, dynamic decision-making
+        - cons: can be unpredictable (why you need to add in constraints)
+    2. **workflow agents** = these agents follow specific patterns and do not think. While they manage when and how the other agents run, this is predetermined by logic (set by you - human)
+        - pros: more control, pre-determined order critical
+        - cons: need to have clearly written out rules and processes
+- The key for choosing the right type of agent to build is to **match pattern to purpose**: 
+    - personalized adaptation → LLM Orchestrator
+    - predictable workflows → Sequential
+        - question → search → read → answer
+    - parallel research → Parallel
+        - Researcher 1,2,3 → compile into summary
+    - quality refinement → Loop
+        - feedback → revision cycles
+- When you run the code, the output is in the terminal. You can choose to save the output elswewhere. So, I tried to change the output to save to markdown file.
+    - while it did save to a md file - it only shared the summary about the patterns ( what each agent pattern was doing) - not the _actual_ results. But it's the actual results I need.
+    - Digging in - it's because `run_debug()` prints directly in the terminal - it isn't captured elsewhere.
+    - To fix this - need to use `run()` to then capture the result. 
+    
 
 ---
 
-## Questions & Further Exploration
+# Questions & Further Exploration
 - How do I see the agent's "thinking" process more explicitly?
 - What other tools can I give an agent besides Google Search?
-- How does the ADK Web UI work? (Section 3 of notebook - not completed yet)
-- Can I create custom tools for my agent?
-- When would you use multiple agents vs. one agent with multiple tools?
+- What custom tools for my agent?
 
 ---
 
@@ -138,6 +155,13 @@ vs. simple LLM:
 ```
 Prompt -> LLM -> Text
 ```
+* There is a difference between **LLM agents** vs **workflow agents**
+    - LLM Agents "think" - it is not deterministic
+        - You need to define its identity, clearly guiding its behavior through instructions, and equipping it with the necessary tools and capabilities.
+    - Workflow agents do not "think"  - they are derministic. Their primary role is to manage how and when other agents run. They manage: 
+        - Sequential Agents: Executes sub-agents one after another, in sequence.
+        - Loop Agents: Repeatedly executes its sub-agents until a specific termination condition is met.
+        - Parallel agents: Executes multiple sub-agents in parallel.
 
 ### Defining an agent
 To configure an Agent means to **set its key properties** - these tell it what to do and how to operate.
@@ -173,6 +197,7 @@ root_agent = Agent(
 
 
 ## Resources
+- [Writing good agent instructions](https://google.github.io/adk-docs/agents/llm-agents/#defining-the-agents-identity-and-purpose)
 - [ADK Documentation](https://google.github.io/adk-docs/)
 - [Kaggle 5-Day Agents Sprint](https://www.kaggle.com/learn-guide/5-day-agents)
 - [Google AI Studio](https://aistudio.google.com/app/apikey) - API key generation
