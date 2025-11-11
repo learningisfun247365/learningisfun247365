@@ -14,11 +14,14 @@ _Notes from Kaggle 5-Day Agents Sprint - Day 2_
 - MCP (Model Context Protocol) for standardized integrations
 
 ## Codelabs
-1. **Day 2a** Explore new ways to add tools to extend what your agents can do
+1. **Day 2a** How to add custom Python functions as tools to your agent.
    - Basic custom tools → Build your own Python functions as tools
    - Tool orchestration → Use one agent as a tool inside another agent
-2. **Day 2b** Explore best practices for tools, including using MCP and long-running operations.
-
+2. **Day 2b**  How to consume external MCP services and handling long-running operations.
+    - Connect to external MCP servers
+    - Implement long-running operations that can pause agent execution for external input
+    - Build resumable workflows that maintain state across conversation breaks
+    - Understand when and how to use these patterns
 ---
 ## Adding Tools to Agents
 
@@ -69,17 +72,39 @@ knowledge bases
 
 **Bottom line:** Write documentation as if explaining to someone who's never seen the tool before. The clearer you are, the better the model understands when and how to use it.
 
-### The Interoperability Solution (MCP)
-- MCPs are the USB C of LLMs world - it allows the agents to connect to a variety of tools (googledrive, databases, github, etc. ) in **a standardized way.**
+
+## Using External MCPS 
+- MCPs are the USB C of LLMs world - it allows the agents to connect in a standarized way to a variety of external systems like Google, Slack, Github, and more **without needing to write writing your own integrations/API systems**.
     - Before this, you needed to write separate code for the agent to connect to each cool.
     - think of an MCP as a Hotel Concierge at a fancy hotel. You ask this concierge, _"Hey, I want dinner researvations for Le Bernadin tonight and tickets to see Waiting for Godot with Keanu Reeves."_ The Concierarge:
     - Poses your request to the restaurant, to the box office.
     - Brings back all outputs to do you in organized way.
 - "Interoperability Solution" means that it enables different systems to talk to each other.
-
+- **Setting up an MCP**
+    - Step 1: Choose an MCP Server and tool
+        - Demo purposes: using Everything MCP Server - an npm package
+    - Step 2: Create the MCP Toolset (configure connection)
+        - The `McpToolset` is used to integrate an ADK Agent with an MCP Server.
+            - Uses npx (Node package runner) to run the MCP server
+            - Connects to @modelcontextprotocol/server-everything
+            - Filters`` to only use the getTinyImage tool (the server has others, but we only need this one)
+    - Step 3: Add it to your agent
+    - Run and test the agent
+- 
+## Other stuff I learned
+- I decided not to use the Kaggle Notebook again, but this time I was having a lot more trouble figuring out how to run the virtual environment locally.
+- Apparently **I needed to select a specific kernel**, but I had no idea what this was 🤷🏻‍♀️
+- Virtual environments isolate packages per project.  
+- **Kernels** are the distinct environments that connect the notebook to a specific python environement (packages) 
+- When I was selecting a kernel, I was seeing different options — the different Python environments I could use. 
+    - Base Python (my system's default Python)
+    - My virtual environment (the one I created for this project)
+- **The kernel is the bridge between the Jupyter Notebook and whichever Python environment I want to use.**
+    -  To avoid "module not found" errors, I need to make sure the kernel I select matches the environment where I installed my packages. 
+- **Mental Model:** as A Python session that stays running in the background Just like how when you open a Python terminal and type commands, it remembers what you did.
 ---
 
-## Key Takeaways (from claude)
+## Key Takeaways 
 
 **Tools transform LLMs from prediction machines into capable agents**
 - Without tools: just text generation
@@ -315,7 +340,7 @@ Main Agent (Orchestrator)
 ---
 
 ## Resources
-
+- [MCP Servers maintained by companies](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#%EF%B8%8F-official-integrations)
 - [ADK Documentation](https://google.github.io/adk-docs/)
 - [ADK Tools Documentation](https://google.github.io/adk-docs/tools/)
 - [ADK Custom Tools Guide](https://google.github.io/adk-docs/tools-custom/)
