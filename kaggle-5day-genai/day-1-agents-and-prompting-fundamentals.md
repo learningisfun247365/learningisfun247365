@@ -83,10 +83,46 @@ python3 day1_local_agent.py
     - It's actually running **locally on your computer** - I need to **manually type** http://127.0.0.1:8000 into your browser. 
     - There's no clickable link - just open a browser and type the URL
 - The browser UI is **optional** - just a debugging tool. 
+- I got in a spiral of death trying to activate the sample-agent as well. going to ignore this browser dev UI for now. 
+
+## Key Takeaways
+- Easier to use in VScode - more authentic practice and better debugging
+- Virtual environments prevent package conflicts - each project gets isolated Python packages
+- Agents are different from LLMs: they reason, take actions with tools, and observe results
+- Tool usage is key: agents decide when to use tools based on instructions
+- Each time working on this project, need to spin up the virtual environment:
+```bash
+cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai
+source venv/bin/activate
+python3 day1_local_agent.py
+```
+- the browser web UI isn't necesssary for running the agent. It's helpful for debugging. 
+
+**The "Aha" Moments:**
+- Virtual environments = project-specific package isolation (like separate toolboxes for different projects)
+- ADK's `run_debug()` prints output automatically to terminal - no explicit print statement needed
+- Agents don't just respond - they think → act → observe → answer
+
+**A thought**
+I knew that there were layers of abstraction away from the code when using browser based, no-code tools like Claude.ai, gumloop, librechat, openAI. 
+These browswer based tools handles the tool routing, api management, integrations, etc. I knew this in theory. 
+Trying to work with ADK shows me HOW FAR AWAY I am from the actual inner workings of the tool I am when using these tools. 
+They provide this abstraction layer that abstracts away the nuts and bolts of the tool. 
+But, it is useful to try and wrap my brain around how agents actually work under the hood - the fundamentals - and what these tools like Librechat are making easier to do. 
+
 
 ---
 
-## Key Concepts
+## Questions & Further Exploration
+- How do I see the agent's "thinking" process more explicitly?
+- What other tools can I give an agent besides Google Search?
+- How does the ADK Web UI work? (Section 3 of notebook - not completed yet)
+- Can I create custom tools for my agent?
+- When would you use multiple agents vs. one agent with multiple tools?
+
+---
+
+# Key Concepts
 
 ### What is an agent?
 * AI agents think and act (different from just responding like an LLM)
@@ -130,33 +166,6 @@ root_agent = Agent(
 
 ---
 
-## Key Takeaways
-- Easier to use in VScode - more authentic practice and better debugging
-- Virtual environments prevent package conflicts - each project gets isolated Python packages
-- Agents are different from LLMs: they reason, take actions with tools, and observe results
-- Tool usage is key: agents decide when to use tools based on instructions
-- Each time working on this project, need to spin up the virtual environment:
-```bash
-cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai
-source venv/bin/activate
-python3 day1_local_agent.py
-```
-
-**The "Aha" Moments:**
-1. Virtual environments = project-specific package isolation (like separate toolboxes for different projects)
-2. ADK's `run_debug()` prints output automatically to terminal - no explicit print statement needed
-3. Agents don't just respond - they think → act → observe → answer
-
----
-
-## Questions & Further Exploration
-- How do I see the agent's "thinking" process more explicitly?
-- What other tools can I give an agent besides Google Search?
-- How does the ADK Web UI work? (Section 3 of notebook - not completed yet)
-- Can I create custom tools for my agent?
-- When would you use multiple agents vs. one agent with multiple tools?
-
----
 
 ## Resources
 - [ADK Documentation](https://google.github.io/adk-docs/)
