@@ -2,10 +2,18 @@
 
 ## Quick Start (Copy & Paste This)
 
+**Day 1a - Simple Agent (Roxie):**
 ```bash
 cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai
 source venv/bin/activate
-python3 day1_local_agent.py
+python3 day1/day1a_simple_agent.py
+```
+
+**Day 1b - Multi-Agent Systems:**
+```bash
+cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai
+source venv/bin/activate
+python3 day1/day1b_multi_agent.py
 ```
 
 ---
@@ -29,7 +37,11 @@ source venv/bin/activate
 
 ### 3. Run the Script
 ```bash
-python3 day1_local_agent.py
+python3 day1/day1a_simple_agent.py
+```
+or
+```bash
+python3 day1/day1b_multi_agent.py
 ```
 - **What:** Executes your AI agent script
 - **Why:** This actually runs your code
@@ -62,7 +74,7 @@ deactivate
 
 ## Editing Your Questions
 
-1. Open `day1_local_agent.py` in VS Code
+1. Open `day1/day1a_simple_agent.py` in VS Code
 2. Find lines 71, 79 (the questions)
 3. Change the text between the quotes
 4. Save the file (`Cmd + S`)
@@ -72,9 +84,14 @@ deactivate
 
 ## One-Line Version (Advanced)
 
-Run everything at once:
+**Day 1a:**
 ```bash
-cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai && source venv/bin/activate && python3 day1_local_agent.py
+cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai && source venv/bin/activate && python3 day1/day1a_simple_agent.py
+```
+
+**Day 1b:**
+```bash
+cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai && source venv/bin/activate && python3 day1/day1b_multi_agent.py
 ```
 
 **What `&&` does:** Chains commands together - only runs next command if previous one succeeded
@@ -100,15 +117,39 @@ Each project gets its own "room" so they don't interfere with each other.
 
 | File | Purpose | Edit? |
 |------|---------|-------|
-| `day1_local_agent.py` | Your agent script | ✅ Yes - change questions here |
+| `day1/day1a_simple_agent.py` | Day 1a: Simple agent (Roxie) | ✅ Yes - change questions here |
+| `day1/day1b_multi_agent.py` | Day 1b: Multi-agent patterns | ✅ Yes - modify patterns |
+| `day1/notes.md` | Day 1 learning notes | ✅ Yes - add your insights |
+| `day1/*.ipynb` | Original Kaggle notebooks | 📖 Reference only |
 | `.env` | API key storage | ⚠️ Only if key changes |
 | `venv/` | Python packages | ❌ No - managed by pip |
 | `.gitignore` | What git ignores | ❌ Rarely |
 
 ---
 
+## Project Structure
+
+```
+kaggle-5day-genai/
+├── .env                    # API key (shared)
+├── venv/                   # Virtual environment (shared)
+├── HOW-TO-RUN.md          # This file
+├── day1/                  # Day 1 files
+│   ├── day1a_simple_agent.py
+│   ├── day1b_multi_agent.py
+│   ├── notes.md
+│   └── *.ipynb
+├── day2/                  # Future: Day 2 files
+├── day3/                  # Future: Day 3 files
+├── day4/                  # Future: Day 4 files
+└── day5/                  # Future: Day 5 files
+```
+
+---
+
 ## Next Steps
 
-- Try changing questions in the script
+- Try changing questions in the Day 1a script
 - Run the commands yourself a few times to build muscle memory
-- Experiment with different questions to ask Roxie
+- Experiment with different questions and agent patterns
+- Create `day2/` folder when ready for Day 2
