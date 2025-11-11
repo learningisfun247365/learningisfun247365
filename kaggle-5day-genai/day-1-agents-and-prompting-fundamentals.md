@@ -103,12 +103,16 @@ python3 day1_local_agent.py
 - ADK's `run_debug()` prints output automatically to terminal - no explicit print statement needed
 - Agents don't just respond - they think → act → observe → answer
 
-**A thought**
-I knew that there were layers of abstraction away from the code when using browser based, no-code tools like Claude.ai, gumloop, librechat, openAI. 
-These browswer based tools handles the tool routing, api management, integrations, etc. I knew this in theory. 
-Trying to work with ADK shows me HOW FAR AWAY I am from the actual inner workings of the tool I am when using these tools. 
-They provide this abstraction layer that abstracts away the nuts and bolts of the tool. 
-But, it is useful to try and wrap my brain around how agents actually work under the hood - the fundamentals - and what these tools like Librechat are making easier to do. 
+**A thought while working in ADK**
+I knew that there were layers of abstraction away from the code when using browser based, no-code tools like Claude.ai, gumloop, librechat, openAI.
+
+These browswer based tools handles the tool routing, api management, integrations, etc. I knew this in theory.
+
+Trying to work with ADK shows me HOW FAR AWAY from the actual inner workings I am when using these tools.
+
+They provide this abstraction layer that hides the nuts and bolts.
+
+But, it is useful to try and wrap my brain around how agents actually work under the hood - the fundamentals - and what these tools like Librechat are making easier to do.
 
 
 ---
