@@ -104,6 +104,7 @@ python3 day1_local_agent.py
 - Agents don't just respond - they think → act → observe → answer
 
 **A thought while working in ADK**
+
 I knew that there were layers of abstraction away from the code when using browser based, no-code tools like Claude.ai, gumloop, librechat, openAI.
 
 These browswer based tools handles the tool routing, api management, integrations, etc. I knew this in theory.
