@@ -5,35 +5,161 @@ _Notes from Kaggle 5-Day Agents Sprint - Day 1_
 
 **Course Link:** https://www.kaggle.com/learn-guide/5-day-agents
 
-## Topics Covered
+### Topics Covered
 - What are AI agents?
 - Agent architectures and components
 - Prompting fundamentals for agents
 - Agent vs. LLM capabilities
+- Tool usage and reasoning loops
+- Local development environment setup
 
-## Codelabs
-_To be completed..._
+### Codelabs
+1. **Day 1a: From Prompt to Action** - Build your first agent using Gemini and ADK
+   - Setup and configuration
+   - Agent definition and properties
+   - Running agents with tools (Google Search)
 
-## Notes
+2. **Day 1b: Multi-Agent Systems** (not yet started)
 
-### Key Concepts
+---
 
-#### What is an AI Agent?
+## Activity 1: Setting Up Local Environment
 
+### Went a different direction - downloaded code instead. Process:
+- The Kaggle notebook was frankly annoying to work in, and i was running into errors. So I downloaded the code (.ipynb) instead to run locally in vscode.
+- Claude checked that I had python installed (3.9.6), and then it installed the `google-adk` package.
+- It asked for my api key, which it then saved in `.env` file to store it - and it specifically checked to make sure it wasn't committed to git by adding it to the `.gitignore` file
+- Then, it created a simplified python script (`day1_local_agent.py`) to run locally instead of the notebook.
+- **Error #1:** API key was wrong. I had copied `gen-lang-client-...` instead of the actual key.
+    - Fixed: Got correct key from AI Studio (starts with `AIza...`) and added it manually to `.env` file.
+- It worked! But, I realized - how do I actually run the code??
+    - Initially thought: Open notebook file `day-1a-from-prompt-to-action.ipynb`, click the ▶️ button at the top.
+    - But actual way: Run the Python script in terminal
+- **Error #2:** When I ran it, I got this:
+```bash
+mariaweaver@air:~/projects % /opt/homebrew/bin/python3.12 /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai/day1_local_agent.py
+Traceback (most recent call last):
+  File "/Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai/day1_local_agent.py", line 8, in <module>
+    from dotenv import load_dotenv
+ModuleNotFoundError: No module named 'dotenv'
+```
+- **What this means:** I was using Python 3.12, but packages were installed for Python 3.9
+- **The fix:** Use a **virtual environment**
+    - _Why?_ They let you run multiple projects that require different versions of a package. Each project gets its own isolated environment.
+    - Claude created `venv/` folder which is this project's isolated python environment. New packages get installed in there instead of system-wide.
+    - I need to activate this virtual environment when working in the project.
+    - Created with: `python3.12 -m venv venv`
+    - Activate with: `source venv/bin/activate`
+    - Then installed packages: `pip install google-adk python-dotenv`
+- **Success!** Script ran with Python 3.12 and answered all my test questions.
 
-#### Agent Components
+---
 
+## Activity 2: Building the Agent
 
-#### Prompting Strategies
+### What I built:
+- Created an agent named "Roxie" that can search Google for current information
+- Tested it with three questions:
+    1. "What is ADK from Google?" - Agent searched and found it's available in Python, Go, Java
+    2. "What's the weather in New York City?" - Agent searched and got current weather (38°F, mostly cloudy)
+    3. "Who is the most decorated filmmaker?" - Agent searched and answered Steven Spielberg
 
+### Where output appears:
+- **Confusion:** I kept looking for where `print(response)` was in the code
+- **Reality:** The `runner.run_debug()` function **automatically prints to terminal**. No explicit print statement needed.
+- Output scrolls in the terminal window where you run the command
+- Not in a file, not in VS Code editor - just live terminal output
 
-## Code Examples
+### How to run it every time:
+```bash
+cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai
+source venv/bin/activate
+python3 day1_local_agent.py
+```
 
+### Using the browswer-based dev UI
+- The directions in this course are not very intuitive (or rather - maybe they are for someone who is a dev).
+- I couldn't figure out how to access the browser-based dev UI because I was expecting a link to click into.
+    - It's actually running **locally on your computer** - I need to **manually type** http://127.0.0.1:8000 into your browser. 
+    - There's no clickable link - just open a browser and type the URL
+- The browser UI is **optional** - just a debugging tool. 
+
+---
+
+## Key Concepts
+
+### What is an agent?
+* AI agents think and act (different from just responding like an LLM)
+```
+Prompt -> Agent -> Thought -> Action -> Observation -> Final Answer
+```
+vs. simple LLM:
+```
+Prompt -> LLM -> Text
+```
+
+### Defining an agent
+To configure an Agent means to **set its key properties** - these tell it what to do and how to operate.
+
+Main properties:
+- **name and description**: Identifies the agent
+- **model**: The LLM powering the agent's reasoning (we used `gemini-2.5-flash-lite`)
+- **instruction**: The agent's guiding prompt - tells it its goal and behavior
+- **tools**: List of tools the agent can use (we gave it `google_search`)
+
+```python
+root_agent = Agent(
+    name="Roxie",
+    model=Gemini(
+        model="gemini-2.5-flash-lite",
+        retry_options=retry_config
+    ),
+    description="A simple agent that can answer general questions.",
+    instruction="You are a helpful assistant. Use Google Search for current info or if unsure.",
+    tools=[google_search],
+)
+```
+
+### How agents work:
+1. **Agent inspects available tools** - Knows what it can do
+2. **Instruction tells when to use tools** - "Use Google Search for current info or if unsure"
+3. **Agent reasons about the question** - Does it need current info?
+4. **Agent takes action** - Calls the Google Search tool
+5. **Agent observes result** - Reads search results
+6. **Agent formulates answer** - Combines reasoning with tool results
+
+---
 
 ## Key Takeaways
+- Easier to use in VScode - more authentic practice and better debugging
+- Virtual environments prevent package conflicts - each project gets isolated Python packages
+- Agents are different from LLMs: they reason, take actions with tools, and observe results
+- Tool usage is key: agents decide when to use tools based on instructions
+- Each time working on this project, need to spin up the virtual environment:
+```bash
+cd /Users/mariaweaver/projects/learningisfun247365/kaggle-5day-genai
+source venv/bin/activate
+python3 day1_local_agent.py
+```
 
+**The "Aha" Moments:**
+1. Virtual environments = project-specific package isolation (like separate toolboxes for different projects)
+2. ADK's `run_debug()` prints output automatically to terminal - no explicit print statement needed
+3. Agents don't just respond - they think → act → observe → answer
+
+---
 
 ## Questions & Further Exploration
+- How do I see the agent's "thinking" process more explicitly?
+- What other tools can I give an agent besides Google Search?
+- How does the ADK Web UI work? (Section 3 of notebook - not completed yet)
+- Can I create custom tools for my agent?
+- When would you use multiple agents vs. one agent with multiple tools?
 
+---
 
 ## Resources
+- [ADK Documentation](https://google.github.io/adk-docs/)
+- [Kaggle 5-Day Agents Sprint](https://www.kaggle.com/learn-guide/5-day-agents)
+- [Google AI Studio](https://aistudio.google.com/app/apikey) - API key generation
+- `HOW-TO-RUN.md` - Command reference guide I created today
