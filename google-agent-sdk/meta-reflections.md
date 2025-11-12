@@ -11,6 +11,9 @@ This file captures insights about **how to teach others** to build AI agents, in
 ---
 
 ## Insights & Ideas
+### When do you need an agent?
+- flesh this out: how do people figure out what types of agents to build and why? 
+
 
 ### The Agent Builder Agent Concept
 **Date:** 2025-11-11

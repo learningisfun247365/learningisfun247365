@@ -59,6 +59,52 @@ Foundation Phase → Breadth Phase → Refinement Phase → Deep Dive Phase
 - Custom FunctionTool: `analyze_patterns()` - Identifies preference patterns
 - Potentially: Image search or art database API
 
+### Recommended MCP Integrations:
+
+**Essential:**
+- **Memory MCP** (Reference Server)
+  - **Replaces:** The manual `preferences.json` approach entirely
+  - **Why:** Builds knowledge graph automatically: artworks → reactions → visual patterns → artists → movements
+  - **Use case:** "Show me works similar to what I liked 3 weeks ago" without manual pattern matching code
+  - **Benefit:** The pattern recognition agent becomes much more powerful with real graph-based memory
+
+- **Fetch MCP** (Reference Server)
+  - Pull clean content from museum websites and artist pages
+  - Use case: Get artwork descriptions, artist bios, exhibition details with proper structure
+  - Benefit: Better quality data than scraping Google Search results
+
+**Nice to Have:**
+- **Filesystem MCP** (Reference Server)
+  - Export "Taste Profile" as shareable document
+  - Use case: Save weekly analysis reports, curriculum progress, preference summaries
+  - Benefit: Build a portfolio of your taste development journey
+
+- **Museum API MCPs** (if available in MCP ecosystem)
+  - Look for: Met Museum, Rijksmuseum, Art Institute of Chicago integrations
+  - Use case: Access high-quality artwork databases with proper metadata and images
+  - Benefit: Replace Google Search with structured, reliable art data
+
+**Implementation Change with Memory MCP:**
+
+**Before (manual approach):**
+```python
+# Manual JSON file
+def record_preference(artwork_info: str, reaction: str, rating: int):
+    # Save to preferences.json
+    # No automatic pattern recognition
+```
+
+**After (with Memory MCP):**
+```python
+# Memory MCP builds knowledge graph automatically
+# Pattern Recognition Agent queries the graph:
+# "Find artworks with color palettes similar to 5-star rated pieces"
+# "Show me artists in the same movement as works I engaged with most"
+# "What visual elements appear in 80% of my favorite works?"
+```
+
+The Memory MCP handles the complex pattern matching you were planning to code manually.
+
 ### Estimated Complexity:
 **High** - Requires state management across sessions, custom tools, and thoughtful learning design. May want to start with simpler version first.
 

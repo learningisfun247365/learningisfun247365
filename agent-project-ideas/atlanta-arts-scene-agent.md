@@ -63,6 +63,36 @@ Event Finder → Filter Agent → Summarizer Agent → Formatter Agent → Outpu
 - Potentially custom date parsing function
 - Potentially custom filtering function (if needed as FunctionTool)
 
+### Recommended MCP Integrations:
+
+**Essential:**
+- **Memory MCP** (Reference Server)
+  - Replaces manual tracking of events/venues with knowledge graph
+  - Use case: Track which events you've attended, venue preferences, recurring events
+  - Benefit: Intelligent deduplication ("show me gallery openings I haven't been recommended before")
+
+- **Fetch MCP** (Reference Server)
+  - Converts web content to markdown for clean extraction
+  - Use case: Extract structured event details (date, time, price) from venue websites
+  - Benefit: Better data quality than raw Google Search results
+
+- **Time MCP** (Reference Server)
+  - Proper timezone and date conversion
+  - Use case: Handle "this weekend", "next Tuesday", convert event times consistently
+  - Benefit: Accurate date filtering and calendar integration
+
+**Nice to Have:**
+- **Filesystem MCP** (Reference Server)
+  - Save weekly digests as markdown files
+  - Use case: Build searchable archive of past recommendations
+  - Benefit: Track what you were recommended over time
+
+**Implementation Flow with MCPs:**
+```
+Search → Fetch (extract clean data) → Memory (check context/history) →
+Filter (intelligent, history-aware) → Summarize → Filesystem (save digest)
+```
+
 ### Tool Documentation Example:
 
 For the `search_atlanta_arts_events` tool used by research agents:
