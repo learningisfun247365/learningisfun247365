@@ -1,0 +1,60 @@
+That is a perfect way to transition this plan into a working application! Replit is a great environment for building a functional, shared web app.
+
+Instead of asking Replit to build a Google Sheet, we will ask it to build a proper **web application** (likely using a Python framework like Flask or Django) that uses a database (like SQLite) and integrates with the movie API, completely eliminating the need for complex Google Sheet formulas and add-ons.
+
+Here is a comprehensive prompt you can use to ask Replit to build your shared watchlist app, covering all the requirements we finalized:
+
+---
+
+## 💻 Replit App Builder Prompt
+
+**Goal:** Create a simple, shared web application for two users (a couple) to collaboratively track movies and TV shows they want to watch. The app must prioritize **automatic data entry** and **shared decision-making**.
+
+### 1. Core Functionality & User Experience
+
+* **User Authentication:** The app must support two named users (e.g., "User A" and "User B" / "Wife" and "Husband") with simple login/session tracking. It does not require complex password management.
+* **Shared Database:** All entries must reside in a single, shared database accessible by both users.
+* **Data Entry Automation (Critical):** When a user enters a **Title**, the app must immediately use the **OMDb API** or **TMDB API** (API key will be provided) to automatically fetch and save the following information:
+    * Poster Image URL
+    * Runtime / Series Status
+    * Genre
+    * IMDb/TMDB ID
+    * Plot Summary
+
+### 2. Required Data Fields for Each Entry
+
+The database model must include the following fields:
+
+| Field Category | Field Name | Data Type | Notes |
+| :--- | :--- | :--- | :--- |
+| **Title Data (Auto-Fetched)** | `title`, `poster_url`, `runtime`, `genre`, `imdb_id` | Text | Populated automatically via API lookup. |
+| **Priority Data (User Input)** | `user_a_priority`, `user_b_priority` | Dropdown/Integer (1-5) | Simple rating: High, Medium, Low (or 1, 2, 3). |
+| **Progress Data (User Input)** | `user_a_progress`, `user_b_progress` | Text/Dropdown | Tracks current state (e.g., S3 E5, Watched, Unwatched). |
+| **Calculated Status (App Logic)** | `shared_priority_score`, `joint_watch_status` | Text | Calculated by the application's logic (see below). |
+| **Attribution** | `added_by` | Text | Saves which user added the title. |
+
+### 3. Application Logic (Decision Making)
+
+The application must calculate and display two key fields:
+
+* **Shared Priority Score:**
+    * If both users set their priority to "High," the score must display a prominent **"🔥 MUST WATCH"** tag.
+    * If only one user is "High," display "Medium Interest."
+* **Joint Watch Status:**
+    * If both users are marked as "Watched" or "Caught Up," display "✅ Completed."
+    * If one user is ahead of the other, display a clear **"⚠️ SPOILER ALERT - SPLIT PROGRESS"** tag.
+    * If both users are "Unwatched," display "🍿 Ready to Watch."
+
+### 4. User Interface (UI) Requirements
+
+* **Main View:** Use a **Gallery View** (cards/tiles) where the **Poster Image** is the primary visual element, making the app fun and engaging.
+* **Card Display:** Each card must prominently display the **Title**, **Streaming Service** (manual input is fine for this), and the calculated **Shared Priority Score**.
+* **Filtering:** The app must have easy-to-use filter buttons/tabs for:
+    * `🔥 MUST WATCH` (filtering by Shared Priority Score)
+    * `Movies` vs. `TV Shows`
+    * `Streaming Service` (e.g., Netflix only)
+    * `Unwatched / Ready to Watch`
+
+### Final Request
+
+"Please use a clean, modern framework (like Flask/Python) and a simple database (like SQLite). Focus on functionality and the logic for the shared priority and status fields. Provide the basic file structure and the necessary logic for the API calls and database interactions."
