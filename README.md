@@ -16,44 +16,38 @@ I'm obsessed with learning about learning. More specifically: I'm constantly try
 
 ### What I'm Building at Work
 
-I work in L&D, where I design bold, practical programs that help people learn at work—treating learning like a product. 
+I work in L&D, where I design bold, practical programs that help people learn at work—treating learning like a product.
 
-Right now, some things I'm working on: 
-- **Hack with [Tool]** - A support wrapper around Hack Days where learning happens in service of building, not as a parallel track. Help people find what to hack, get unstuck while building, and ship. Tool-based streams (Claude Code, Gumloop, MCPs, etc.) with bite-sized how-tos, not courses.
-- **Tech Infrastructure** - my hot take is that the LMS industry is dead. Learning in the flow of work on an external platform - definitionally this is NOT in "the flow". I'm working on figuring out how to host learning content on custom built sites (time bound) vs our intranet (evergreen). 
+The model has shifted. I used to run parallel learning tracks alongside engineering events — structured curriculum, curated content. The thesis now: when AI is the thing people need to learn, the learning *is* using it. So I stopped building tracks and started building infrastructure that meets people inside the work itself.
 
-I've been building our AI training, and recent completed projects include:
-- **Learning Village** - A gamified "AI-mazing Race" at Hack Days that took 35% of the company from "here's how to prompt" to actually building with Cursor and agents through seven progressive challenges.
-- **Quick Game Jam** - Three-week program where ~1000 people coded and deployed games using AI tools. The goal: prove you can go from zero to deployed prototype in hours, not weeks when you use AI as your building partner (oh and built the learning website too - no LMS needed!)
-- **Onboarding as Product** - Revamping how new engineers and data folks build their mental model of our tech stack and how systems connect. The goal: personalized, subdiscipline-specific paths where they ship real work from day one and use AI to accelerate understanding.
+**Currently working on:**
+- **Tech Infrastructure** — My hot take: the LMS industry is dead. Learning in the flow of work on an external platform is definitionally *not* in "the flow." I'm figuring out how to host learning content on custom-built sites (time-bound) vs. our intranet (evergreen).
+- **AI-First Engineer Onboarding** — What does it actually look like to be an AI-first engineer from day one? Redesigning how new engineers and data folks build their mental model of our tech stack — personalized, subdiscipline-specific, shipping real work from day one with AI as the accelerant.
+- **AI Enablement at Scale** — Figuring out how to drive AI adoption more broadly across an org. Increasingly convinced the answer isn't more content — it's the right humans. Investing in people who can teach others accelerates AI maturity faster than any program. The direction I'm exploring: discipline-specific guilds, because what an engineer needs to learn about AI is not what a designer or data scientist needs. Learning's role is shaping the spaces and channels — not owning the content.
+
+**Recently completed:**
+- **Springboard Projects (HD39)** — Shifted from curated content tracks to infrastructure-first: real problems, pre-recruited champions, open participation.
+- **Hack with [Tool]** — A support wrapper around Hack Days where learning happens in service of building, not as a parallel track. Tool-based streams with bite-sized how-tos, not courses.
+- **Quick Game Jam** — ~1000 people coded and deployed games using AI tools. Zero to deployed prototype in hours, not weeks. Built the learning website too — no LMS needed.
+- **Learning Village** — A gamified challenge that took a significant chunk of the company from "here's how to prompt" to actually building with AI tools. We graduated from this model: people had leveled up, and structured gamification isn't how you teach people to work with AI. The work needed to move inside the tools.
 
 ### What I'm Building & Learning Personally
 
-**Teaching:** I'm developing a [Maven](https://maven.com/) course called *Build Learning Fast With AI* — a practical system for L&D professionals to build training programs using specialized AI agents. Four agents (SME, ID, Editor, Learner) that solve the real bottlenecks: not enough SME time, unclear structure, bloated content, and blind spots about where learners struggle.
+**Building:** Leaning hard into vibe coding — pushing the limits of what I can build and paying attention to what this tooling does to how I think. One thing I'm exploring: an app built around my son's schoolwork — something tutoring-adjacent, personalized to him, using content his school already provides.
 
-**Learning:** Currently working through [Frameworks: Complexity to Clarity](https://www.youtube.com/@VickyZhaoBEEAMP) by Vicky Zhao — learning how to distill complex ideas into clear mental models.
+**Learning:** Moved fully to Claude Code. Dropping the "non-dev / pseudo-dev" frame — that distinction doesn't hold anymore.
 
-**Experimenting:** Trying to find the line between using technology as a tool vs. defaulting to it for everything. Less screen time, more intentional use. Not sure where this is going yet, but it feels important.
+**Experimenting:** Still trying to hold the line on less screen time. This is harder than it used to be when the pace of AI doesn't slow down. I don't have this figured out yet.
 
-### Current Experiments
-
-But I'm also building something more personal here: a space to practice what I preach. This GitHub is where I'm learning in public — for accountability as well as community. I'm experimenting with AI agents, coding as a non-dev, and forcing myself to slow down enough to actually grapple with ideas instead of just consuming them.
-
-- 🤖 **Learning to use Claude Code effectively:**
-  - As a non-dev: Using Cursor and VSCode to create a command center to access all my files and build with AI
-  - As a pseudo-dev: Building projects to learn prompting, APIs, and AI-driven development
-- ✍️ **Writing on [Substack](https://substack.com/@marialearns)** as a way to force myself to pause and think deeply about one thing instead of just consuming information
-- 🧠 Creating AI agents to be partners in work and life
+**Writing:** On [Substack](https://substack.com/@marialearns) — a way to force myself to pause and think deeply about one thing instead of just consuming.
 
 ### Beyond the Screen
 When I'm not thinking about how we learn, I'm usually:
-- 🏃‍♀️ Running and strength training (got really into lifting this year)
-- 🇫🇷 Practicing French (prepping for a month-long immersion class in March)
-- 🎭 At the theatre — I love plays
-- 🎬 Watching something with my husband 
-- 📖 Reading - right now, two books on deck
-  - _The Story of Art_ by E.H. Gombrich
-  - _Martyr!_ by Kaveh Akbar
+- 🇫🇷 Currently in France, wrapping up a month of French classes — mornings in class, evenings working (exhausting). French improved. Ate a lot of carbs. Being a real beginner in a real context reminded me why I do this work — empathy for new learners hits differently when you *are* the new learner.
+- 🏋️‍♀️ Weightlifting (running less right now)
+- 🎭 Trying to start a theatre + film group in Atlanta — see art together, talk about it salon-style. Trying to build more of the spaces I want to exist and invite people in.
+- 📖 Currently reading: _How Fascism Works: The Politics of Us and Them_ by Jason Stanley
+- 📺 Watching: _Shrinking_ and _The Pitt_ — lately drawn to series and films about personal relationships: how tangled and fraught they are, and how essential they are anyway.
 - 🧶 Knitting
 
 ### Let's Connect
