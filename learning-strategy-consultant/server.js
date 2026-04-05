@@ -19,6 +19,10 @@ app.post('/api/chat', async (req, res) => {
     return res.status(500).json({ error: 'ANTHROPIC_API_KEY not configured. Add it to your .env file.' });
   }
 
+  if (!messages || !Array.isArray(messages)) {
+    return res.status(400).json({ error: 'Invalid request: messages must be an array' });
+  }
+
   try {
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',

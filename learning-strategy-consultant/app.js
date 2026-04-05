@@ -25,7 +25,7 @@ function renderMessage(role, content) {
   bubble.classList.add('bubble', role === 'user' ? 'user' : 'assistant');
 
   if (role === 'assistant') {
-    bubble.innerHTML = marked.parse(content);
+    bubble.innerHTML = DOMPurify.sanitize(marked.parse(content));
   } else {
     bubble.textContent = content;
   }
@@ -81,7 +81,10 @@ async function sendMessage(userText) {
       throw new Error(data.error || 'Something went wrong');
     }
 
-    const assistantContent = data.content[0].text;
+    const assistantContent = data.content?.[0]?.text;
+    if (!assistantContent) {
+      throw new Error('Unexpected response format from Claude');
+    }
     messages.push({ role: 'assistant', content: assistantContent });
     removeTypingIndicator();
     renderMessage('assistant', assistantContent);
