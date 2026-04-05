@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Strategy Consultant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header-title">Learning Strategy Consultant</h1>
+    <button class="reset-btn" id="reset-btn" title="Start over">↺ Reset</button>
+  </header>
+
+  <main class="chat-container">
+    <div class="chat-messages" id="chat-messages"></div>
+  </main>
+
+  <footer class="input-area">
+    <form class="input-form" id="input-form">
+      <textarea
+        class="input-textarea"
+        id="input-textarea"
+        placeholder="Type your response..."
+        rows="1"
+        autocomplete="off"
+      ></textarea>
+      <button class="send-btn" type="submit" id="send-btn">Send</button>
+    </form>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

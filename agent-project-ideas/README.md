@@ -121,6 +121,38 @@ Each project spec includes:
 
 ---
 
+### 3. [AI Literacy Curriculum Builder](ai-literacy-curriculum-builder.md)
+**Pattern:** Pipeline + Batch
+**Complexity:** Medium
+**Time:** 2-4 hours
+
+Takes a company context and audience description, generates a full AI literacy learning plan: objectives, content recommendations, assessments. Uses the Batches API to generate multiple modules in parallel. Directly work-usable output.
+
+**What I'll Learn:**
+- Batches API for parallel generation
+- Structured outputs / JSON schema
+- Pipeline orchestration
+
+**Status:** 💡 Idea, not spec'd
+
+---
+
+### 4. [Learning in the Age of AI Research Scout](learning-age-of-ai-scout.md)
+**Pattern:** Research + Synthesis + Recurring
+**Complexity:** Medium
+**Time:** 2-4 hours
+
+A recurring research agent that synthesizes what practitioners, researchers, and companies are saying about learning and work in the AI era. Outputs a structured briefing that feeds Substack thinking and work conversations.
+
+**What I'll Learn:**
+- Web search tool use
+- Synthesis patterns
+- Recurring/scheduled agent output
+
+**Status:** 💡 Idea, not spec'd
+
+---
+
 ## Future Project Ideas
 
 **Other domains to explore:**
